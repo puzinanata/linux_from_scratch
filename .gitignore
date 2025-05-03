@@ -1,0 +1,22 @@
+# Logs
+logs/
+*.log
+
+# macOS system files
+.DS_Store
+
+# IDE configs (PyCharm)
+.idea/
+
+
+# Temporary files
+*.swp
+*~
+*.bak
+*.tmp
+
+# Shell history
+*.history
+
+# Output files
+data/sample.txt
