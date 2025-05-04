@@ -2,11 +2,19 @@
 logs/
 *.log
 
+# notes
+notes/
+
+
+
 # macOS system files
 .DS_Store
 
 # IDE configs (PyCharm)
 .idea/
+.idea
+*.iml
+
 
 
 # Temporary files
