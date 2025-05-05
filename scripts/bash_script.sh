@@ -10,6 +10,10 @@ md5_actual=$(md5sum binutils-2.25.tar.bz2 | awk '{ print $1 }')
 if [[ "$md5_actual" == "d9f3303f802a5b6b0bb73a335ab89d66" ]]; then
     tar -xjf binutils-2.25.tar.bz2
     echo "unpacked successfully."
+
+    rm binutils-2.25.tar.bz2
+    echo "Archive removed."
+
 else
     echo "MD5 mismatch!"
 fi
