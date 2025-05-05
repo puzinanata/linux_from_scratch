@@ -4,7 +4,7 @@ logs/
 
 # notes
 notes/
-
+*.txt
 
 
 # macOS system files
