@@ -21,3 +21,4 @@ mkdir -v -p "${BUILD_DIR}"
 
 source steps/1_cross_toolchain/1_binutils.sh
 source steps/1_cross_toolchain/2_gcc.sh
+source steps/1_cross_toolchain/3_headers.sh

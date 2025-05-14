@@ -32,7 +32,7 @@ fi
 
 #Go to unpacked dir with source
 pushd "${PACKAGE_DIR_NAME}"
-#pushd full path of PACKAGE_DIR_NAME
+#full path of PACKAGE_DIR_NAME
 PACKAGE_DIR_NAME=$(pwd)
 pushd "${PACKAGE_DIR_NAME}"
 
@@ -152,10 +152,13 @@ pushd    build
     --enable-languages=c,c++
 
 #Build
-make -j4
+make -j7
 
+# Install
+make install
 
-
+popd
+popd
 popd
 popd
 popd
