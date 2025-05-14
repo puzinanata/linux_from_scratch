@@ -36,3 +36,5 @@ source steps/1_cross_toolchain/1_binutils.sh
 source steps/1_cross_toolchain/2_gcc.sh
 source steps/1_cross_toolchain/3_headers.sh
 source steps/1_cross_toolchain/4_glibc.sh
+source steps/1_cross_toolchain/5_libstdc.sh
+
