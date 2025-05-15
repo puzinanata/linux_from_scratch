@@ -47,7 +47,6 @@ pushd "${PACKAGE_DIR_NAME}"
 mkdir -v build
 pushd build
 
-LFS=/mnt/new_root_dir
 ../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
@@ -58,7 +57,7 @@ LFS=/mnt/new_root_dir
       --without-selinux                  \
       libc_cv_slibdir=/usr/lib
 
-make
+make -j4
 
 make DESTDIR=$LFS install
 

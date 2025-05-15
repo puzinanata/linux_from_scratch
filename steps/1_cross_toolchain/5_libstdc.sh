@@ -10,7 +10,6 @@ PACKAGE_DIR_NAME='gcc-14.2.0'
 pushd "${BUILD_DIR}/${PACKAGE_DIR_NAME}"
 
 rm -rf build/
-
 mkdir -v build
 pushd build
 
@@ -23,7 +22,7 @@ pushd build
     --disable-libstdcxx-pch         \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0
 
-make
+make -j4
 
 make DESTDIR=$LFS install
 

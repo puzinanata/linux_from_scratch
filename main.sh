@@ -14,7 +14,7 @@ BUILD_DIR=/mnt/new_root_dir/build
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 
 # Create directories
-# 4.2. Creating a Limited Directory Layout in the LFS Filesystem
+# Creating a Limited Directory Layout in the LFS Filesystem
 mkdir -v -p "${PACKAGE_CACHE}"
 mkdir -v -p "${LFS}"
 mkdir -v -p "${BUILD_DIR}"
@@ -37,4 +37,5 @@ source steps/1_cross_toolchain/2_gcc.sh
 source steps/1_cross_toolchain/3_headers.sh
 source steps/1_cross_toolchain/4_glibc.sh
 source steps/1_cross_toolchain/5_libstdc.sh
-
+source steps/2_cross_tmp_tools/1_m4.sh
+source steps/2_cross_tmp_tools/2_ncurses.sh
