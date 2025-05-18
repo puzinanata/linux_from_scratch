@@ -13,6 +13,7 @@ LFS=/mnt/new_root_dir
 BUILD_DIR=/mnt/new_root_dir/build
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 
+
 # Create directories
 # Creating a Limited Directory Layout in the LFS Filesystem
 mkdir -v -p "${PACKAGE_CACHE}"
@@ -30,12 +31,25 @@ case $(uname -m) in
 esac
 
 # Install base requirements
-apt install -y bison
+apt update
+apt install -y \
+   bison \
+   bzip2 \
+   gcc \
+   make \
+   texinfo \
+   g++ \
+   gawk \
+   patch \
+   xz-utils \
+   curl \
+   python3
 
 source steps/1_cross_toolchain/1_binutils.sh
 source steps/1_cross_toolchain/2_gcc.sh
 source steps/1_cross_toolchain/3_headers.sh
 source steps/1_cross_toolchain/4_glibc.sh
 source steps/1_cross_toolchain/5_libstdc.sh
+
 source steps/2_cross_tmp_tools/1_m4.sh
 source steps/2_cross_tmp_tools/2_ncurses.sh

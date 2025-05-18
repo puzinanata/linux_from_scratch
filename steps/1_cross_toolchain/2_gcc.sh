@@ -3,10 +3,10 @@
 # for debug on remote comp directly
 #BUILD_DIR=/mnt/new_root_dir/build
 
-PACKAGE_URL='https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz'
-PACKAGE_NAME='gcc-14.2.0.tar.xz'
-PACKAGE_MD5='2268420ba02dc01821960e274711bde0'
-PACKAGE_DIR_NAME='gcc-14.2.0'
+PACKAGE_URL='https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz'
+PACKAGE_NAME='gcc-12.4.0.tar.xz'
+PACKAGE_MD5='fd7779aee878db67456575922281fa71'
+PACKAGE_DIR_NAME='gcc-12.4.0'
 
 pushd "${PACKAGE_CACHE}"
 
