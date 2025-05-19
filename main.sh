@@ -12,6 +12,7 @@ PACKAGE_CACHE=/var/lib/lfs
 LFS=/mnt/new_root_dir
 BUILD_DIR=/mnt/new_root_dir/build
 LFS_TGT=$(uname -m)-lfs-linux-gnu
+JOBS=$(nproc)
 
 
 # Create directories
@@ -30,7 +31,7 @@ case $(uname -m) in
   x86_64) mkdir -pv $LFS/lib64 ;;
 esac
 
-# Install base requirements
+# Install basic requirements
 apt update
 apt install -y \
    bison \
@@ -45,11 +46,13 @@ apt install -y \
    curl \
    python3
 
+# step 1
 source steps/1_cross_toolchain/1_binutils.sh
 source steps/1_cross_toolchain/2_gcc.sh
 source steps/1_cross_toolchain/3_headers.sh
 source steps/1_cross_toolchain/4_glibc.sh
 source steps/1_cross_toolchain/5_libstdc.sh
 
+# step 2
 source steps/2_cross_tmp_tools/1_m4.sh
 source steps/2_cross_tmp_tools/2_ncurses.sh

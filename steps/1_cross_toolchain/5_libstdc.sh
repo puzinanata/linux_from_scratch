@@ -3,9 +3,9 @@
 set -e
 
 # for debug on remote comp directly
-BUILD_DIR=/mnt/new_root_dir/build
-LFS=/mnt/new_root_dir
-LFS_TGT=$(uname -m)-lfs-linux-gnu
+#BUILD_DIR=/mnt/new_root_dir/build
+#LFS=/mnt/new_root_dir
+#LFS_TGT=$(uname -m)-lfs-linux-gnu
 
 # installation this library runs inside existed package gcc-12.4.0
 PACKAGE_DIR_NAME='gcc-12.4.0'
@@ -29,7 +29,7 @@ LFS_TGT=$(uname -m)-lfs-linux-gnu
     --with-libstdcxx-zoneinfo=no    \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0
 
-make -j4
+make -j$JOBS
 
 make DESTDIR=$LFS install
 

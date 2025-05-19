@@ -57,7 +57,7 @@ pushd build
       --without-selinux                  \
       libc_cv_slibdir=/usr/lib
 
-make -j7
+make -j$JOBS
 
 make DESTDIR=$LFS install
 

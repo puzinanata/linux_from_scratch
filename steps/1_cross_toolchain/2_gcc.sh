@@ -152,7 +152,7 @@ pushd    build
     --enable-languages=c,c++
 
 #Build
-make -j7
+make -j$JOBS
 
 # Install
 make install

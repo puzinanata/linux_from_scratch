@@ -44,7 +44,7 @@ pushd "${PACKAGE_DIR_NAME}"
              --enable-default-hash-style=gnu
 
 #Build
-make -j4
+make -j$JOBS
 
 #Install build artefacts from previous step
 make install

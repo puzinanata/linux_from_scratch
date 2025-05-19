@@ -43,7 +43,7 @@ pushd "${PACKAGE_DIR_NAME}"
             --build=$(build-aux/config.guess)
 
 #Build
-make -j4
+make -j$JOBS
 
 #Install build artefacts from previous step
 make DESTDIR=$LFS install

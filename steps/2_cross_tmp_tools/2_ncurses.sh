@@ -60,7 +60,7 @@ popd
             AWK=gawk
 
 #Build
-make -j4
+make -j$JOBS
 
 #Install build artefacts from previous step
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
