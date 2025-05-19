@@ -7,10 +7,10 @@
 #LFS_TGT=$(uname -m)-lfs-linux-gnu
 #JOBS=$(nproc)
 
-PACKAGE_URL='https://ftp.gnu.org/gnu/coreutils/coreutils-9.6.tar.xz'
-PACKAGE_NAME='coreutils-9.6.tar.xz'
-PACKAGE_MD5='0ed6cc983fe02973bc98803155cc1733'
-PACKAGE_DIR_NAME='coreutils-9.6'
+PACKAGE_URL='https://ftp.gnu.org/gnu/diffutils/diffutils-3.11.tar.xz'
+PACKAGE_NAME='diffutils-3.11.tar.xz'
+PACKAGE_MD5='75ab2bb7b5ac0e3e10cece85bd1780c2'
+PACKAGE_DIR_NAME='diffutils-3.11'
 
 pushd "${PACKAGE_CACHE}"
 
@@ -38,22 +38,15 @@ fi
 pushd "${PACKAGE_DIR_NAME}"
 
 #Configure
-./configure --prefix=/usr                     \
-            --host=$LFS_TGT                   \
-            --build=$(build-aux/config.guess) \
-            --enable-install-program=hostname \
-            --enable-no-install-program=kill,uptime
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(./build-aux/config.guess)
 
 #Build
 make -j$JOBS
 
 #Install build artefacts from previous step
 make DESTDIR=$LFS install
-
-mv -v $LFS/usr/bin/chroot              $LFS/usr/sbin
-mkdir -pv $LFS/usr/share/man/man8
-mv -v $LFS/usr/share/man/man1/chroot.1 $LFS/usr/share/man/man8/chroot.8
-sed -i 's/"1"/"8"/'                    $LFS/usr/share/man/man8/chroot.8
 
 popd
 popd

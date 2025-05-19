@@ -58,3 +58,4 @@ source steps/2_cross_tmp_tools/1_m4.sh
 source steps/2_cross_tmp_tools/2_ncurses.sh
 source steps/2_cross_tmp_tools/3_bash.sh
 source steps/2_cross_tmp_tools/4_coreutils.sh
+source steps/2_cross_tmp_tools/5_diffutils.sh
