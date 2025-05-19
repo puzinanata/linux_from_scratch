@@ -56,3 +56,4 @@ source steps/1_cross_toolchain/5_libstdc.sh
 # step 2
 source steps/2_cross_tmp_tools/1_m4.sh
 source steps/2_cross_tmp_tools/2_ncurses.sh
+source steps/2_cross_tmp_tools/3_bash.sh
