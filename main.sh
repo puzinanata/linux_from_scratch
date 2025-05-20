@@ -66,3 +66,4 @@ source steps/2_cross_tmp_tools/9_grep.sh
 source steps/2_cross_tmp_tools/10_gzip.sh
 source steps/2_cross_tmp_tools/11_make.sh
 source steps/2_cross_tmp_tools/12_patch.sh
+source steps/2_cross_tmp_tools/13_sed.sh

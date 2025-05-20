@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # for debug on remote comp directly
-#PACKAGE_CACHE=/var/lib/lfs
-#LFS=/mnt/new_root_dir
-#BUILD_DIR=/mnt/new_root_dir/build
-#LFS_TGT=$(uname -m)-lfs-linux-gnu
-#JOBS=$(nproc)
+PACKAGE_CACHE=/var/lib/lfs
+LFS=/mnt/new_root_dir
+BUILD_DIR=/mnt/new_root_dir/build
+LFS_TGT=$(uname -m)-lfs-linux-gnu
+JOBS=$(nproc)
 
-PACKAGE_URL='https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz'
-PACKAGE_NAME='patch-2.7.6.tar.xz'
-PACKAGE_MD5='78ad9937e4caadcba1526ef1853730d5'
-PACKAGE_DIR_NAME='patch-2.7.6'
+PACKAGE_URL='https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz'
+PACKAGE_NAME='sed-4.9.tar.xz'
+PACKAGE_MD5='6aac9b2dbafcd5b7a67a8a9bcb8036c3'
+PACKAGE_DIR_NAME='sed-4.9'
 
 pushd "${PACKAGE_CACHE}"
 
@@ -40,7 +40,7 @@ pushd "${PACKAGE_DIR_NAME}"
 #Configure
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \
-            --build=$(build-aux/config.guess)
+            --build=$(./build-aux/config.guess)
 
 #Build
 make -j$JOBS
