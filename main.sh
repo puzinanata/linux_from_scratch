@@ -61,3 +61,4 @@ source steps/2_cross_tmp_tools/4_coreutils.sh
 source steps/2_cross_tmp_tools/5_diffutils.sh
 source steps/2_cross_tmp_tools/6_file.sh
 source steps/2_cross_tmp_tools/7_findutils.sh
+source steps/2_cross_tmp_tools/8_gawk.sh
