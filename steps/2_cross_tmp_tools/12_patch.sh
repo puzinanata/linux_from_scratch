@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # for debug on remote comp directly
-#PACKAGE_CACHE=/var/lib/lfs
-#LFS=/mnt/new_root_dir
-#BUILD_DIR=/mnt/new_root_dir/build
-#LFS_TGT=$(uname -m)-lfs-linux-gnu
-#JOBS=$(nproc)
+PACKAGE_CACHE=/var/lib/lfs
+LFS=/mnt/new_root_dir
+BUILD_DIR=/mnt/new_root_dir/build
+LFS_TGT=$(uname -m)-lfs-linux-gnu
+JOBS=$(nproc)
 
-PACKAGE_URL='https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz'
-PACKAGE_NAME='make-4.4.1.tar.gz'
-PACKAGE_MD5='c8469a3713cbbe04d955d4ae4be23eeb'
-PACKAGE_DIR_NAME='make-4.4.1'
+PACKAGE_URL='https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz'
+PACKAGE_NAME='patch-2.7.6.tar.xz'
+PACKAGE_MD5='78ad9937e4caadcba1526ef1853730d5'
+PACKAGE_DIR_NAME='patch-2.7.6'
 
 pushd "${PACKAGE_CACHE}"
 
@@ -24,7 +24,7 @@ pushd "${BUILD_DIR}"
 MD5_ACTUAL=$(md5sum "${PACKAGE_NAME}"| awk '{ print $1 }')
 
 if [[ "${MD5_ACTUAL}" == "${PACKAGE_MD5}"  ]]; then
-    tar -xf "${PACKAGE_NAME}"
+    tar -xJf "${PACKAGE_NAME}"
     echo "unpacked successfully."
 
     rm "${PACKAGE_NAME}"
@@ -39,7 +39,6 @@ pushd "${PACKAGE_DIR_NAME}"
 
 #Configure
 ./configure --prefix=/usr   \
-            --without-guile \
             --host=$LFS_TGT \
             --build=$(build-aux/config.guess)
 
