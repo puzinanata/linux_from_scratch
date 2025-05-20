@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 # for debug on remote comp directly
 #BUILD_DIR=/mnt/new_root_dir/build
 #LFS=/mnt/new_root_dir

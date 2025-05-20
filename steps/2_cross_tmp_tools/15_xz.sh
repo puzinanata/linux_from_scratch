@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # for debug on remote comp directly
-PACKAGE_CACHE=/var/lib/lfs
-LFS=/mnt/new_root_dir
-BUILD_DIR=/mnt/new_root_dir/build
-LFS_TGT=$(uname -m)-lfs-linux-gnu
-JOBS=$(nproc)
+#PACKAGE_CACHE=/var/lib/lfs
+#LFS=/mnt/new_root_dir
+#BUILD_DIR=/mnt/new_root_dir/build
+#LFS_TGT=$(uname -m)-lfs-linux-gnu
+#JOBS=$(nproc)
 
 PACKAGE_URL='https://github.com//tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.xz'
 PACKAGE_NAME='xz-5.6.4.tar.xz'
