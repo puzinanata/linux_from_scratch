@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # for debug on remote comp directly
-#PACKAGE_CACHE=/var/lib/lfs
-#LFS=/mnt/new_root_dir
-#BUILD_DIR=/mnt/new_root_dir/build
-#LFS_TGT=$(uname -m)-lfs-linux-gnu
-#JOBS=$(nproc)
+PACKAGE_CACHE=/var/lib/lfs
+LFS=/mnt/new_root_dir
+BUILD_DIR=/mnt/new_root_dir/build
+LFS_TGT=$(uname -m)-lfs-linux-gnu
+JOBS=$(nproc)
 
-PACKAGE_URL='https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz'
-PACKAGE_NAME='tar-1.35.tar.xz'
-PACKAGE_MD5='a2d8042658cfd8ea939e6d911eaf4152'
-PACKAGE_DIR_NAME='tar-1.35'
+PACKAGE_URL='https://github.com//tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.xz'
+PACKAGE_NAME='xz-5.6.4.tar.xz'
+PACKAGE_MD5='4b1cf07d45ec7eb90a01dd3c00311a3e'
+PACKAGE_DIR_NAME='xz-5.6.4'
 
 pushd "${PACKAGE_CACHE}"
 
@@ -40,13 +40,17 @@ pushd "${PACKAGE_DIR_NAME}"
 #Configure
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \
-            --build=$(build-aux/config.guess)
+            --build=$(build-aux/config.guess) \
+            --disable-static                  \
+            --docdir=/usr/share/doc/xz-5.6.4
 
 #Build
 make -j$JOBS
 
 #Install build artefacts from previous step
 make DESTDIR=$LFS install
+
+rm -v $LFS/usr/lib/liblzma.la
 
 popd
 popd
