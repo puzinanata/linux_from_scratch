@@ -69,4 +69,6 @@ source steps/2_cross_tmp_tools/12_patch.sh
 source steps/2_cross_tmp_tools/13_sed.sh
 source steps/2_cross_tmp_tools/14_tar.sh
 source steps/2_cross_tmp_tools/15_xz.sh
+PATH=$LFS/tools/bin:$PATH
 source steps/2_cross_tmp_tools/16_binutils_pass2.sh
+source steps/2_cross_tmp_tools/17_gcc_pass2.sh

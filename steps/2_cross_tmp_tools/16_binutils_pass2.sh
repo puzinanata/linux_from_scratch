@@ -2,7 +2,6 @@
 
 # for debug on remote comp directly
 #PACKAGE_CACHE=/var/lib/lfs
-#LFS=/mnt/new_root_dir
 #BUILD_DIR=/mnt/new_root_dir/build
 #LFS_TGT=$(uname -m)-lfs-linux-gnu
 #JOBS=$(nproc)
