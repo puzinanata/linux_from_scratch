@@ -58,3 +58,5 @@ sed -i 's/"1"/"8"/'                    $LFS/usr/share/man/man8/chroot.8
 popd
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

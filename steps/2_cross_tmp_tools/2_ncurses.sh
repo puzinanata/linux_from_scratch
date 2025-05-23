@@ -73,3 +73,5 @@ sed -e 's/^#if.*XOPEN.*$/#if 1/' -i $LFS/usr/include/curses.h
 popd
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

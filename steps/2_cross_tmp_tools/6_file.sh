@@ -62,3 +62,5 @@ rm -v $LFS/usr/lib/libmagic.la
 popd
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

@@ -45,3 +45,5 @@ cp -rv usr/include $LFS/usr
 popd
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

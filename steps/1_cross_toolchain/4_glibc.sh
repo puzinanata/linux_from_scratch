@@ -68,6 +68,8 @@ popd
 popd
 popd
 
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}
+
 
 ## Test: ensure that the basic functions (compiling and linking) of the new toolchain are working as expected.
 #echo 'int main(){}' | x86_64-lfs-linux-gnu-gcc -xc -

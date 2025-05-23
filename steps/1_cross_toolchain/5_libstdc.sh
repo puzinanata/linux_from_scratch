@@ -25,7 +25,7 @@ LFS_TGT=$(uname -m)-lfs-linux-gnu
     --disable-libstdcxx-threads     \
     --disable-libstdcxx-pch         \
     --with-libstdcxx-zoneinfo=no    \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/12.4.0
 
 make -j$JOBS
 
@@ -35,3 +35,5 @@ rm -v -f $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la
 
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

@@ -53,3 +53,5 @@ ln -sv bash $LFS/bin/sh
 popd
 popd
 popd
+
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}

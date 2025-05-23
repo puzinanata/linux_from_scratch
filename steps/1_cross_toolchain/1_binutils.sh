@@ -49,7 +49,9 @@ make -j$JOBS
 #Install build artefacts from previous step
 make install
 
+popd
+popd
+popd
 
-popd
-popd
-popd
+rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}
+

@@ -23,12 +23,6 @@ pushd "${BUILD_DIR}"
 MD5_ACTUAL=$(md5sum "${PACKAGE_NAME}"| awk '{ print $1 }')
 
 if [[ "${MD5_ACTUAL}" == "${PACKAGE_MD5}" ]]; then
-    # Remove existing source dir if it exists
-    if [ -d "${PACKAGE_DIR_NAME}" ]; then
-        echo "Removing existing directory: ${PACKAGE_DIR_NAME}"
-        rm -rf "${PACKAGE_DIR_NAME}"
-    fi
-
     tar -xJf "${PACKAGE_NAME}"
     echo "unpacked successfully."
 
