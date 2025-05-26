@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # for debug on remote comp directly
-LFS=/mnt/new_root_dir
-PACKAGE_CACHE=/var/lib/lfs
-BUILD_DIR=/mnt/new_root_dir/build
-LFS_TGT=$(uname -m)-lfs-linux-gnu
-JOBS=$(nproc)
-PATH=$LFS/tools/bin:$PATH
+#LFS=/mnt/new_root_dir
+#PACKAGE_CACHE=/var/lib/lfs
+#BUILD_DIR=/mnt/new_root_dir/build
+#LFS_TGT=$(uname -m)-lfs-linux-gnu
+#JOBS=$(nproc)
+#PATH=$LFS/tools/bin:$PATH
 
 PACKAGE_URL='https://ftp.gnu.org/gnu/gcc/gcc-12.4.0/gcc-12.4.0.tar.xz'
 PACKAGE_NAME='gcc-12.4.0.tar.xz'

@@ -72,3 +72,33 @@ source steps/2_cross_tmp_tools/15_xz.sh
 PATH=$LFS/tools/bin:$PATH
 source steps/2_cross_tmp_tools/16_binutils_pass2.sh
 source steps/2_cross_tmp_tools/17_gcc_pass2.sh
+
+# step 3
+# Prepare LFS for chroot environment
+mkdir -pv $LFS/{dev,proc,sys,run}
+
+# Mounting and Populating /dev
+mount -v --bind /dev $LFS/dev
+
+# Mounting Virtual Kernel File Systems
+mount -vt devpts devpts -o gid=5,mode=0620 $LFS/dev/pts
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+
+if [ -h $LFS/dev/shm ]; then
+  install -v -d -m 1777 $LFS$(realpath /dev/shm)
+else
+  mount -vt tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
+fi
+
+# Entering chroot
+chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    MAKEFLAGS="-j$(nproc)"      \
+    TESTSUITEFLAGS="-j$JOBS"    \
+    /bin/bash --login
+
