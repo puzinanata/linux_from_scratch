@@ -73,3 +73,7 @@ PATH=$LFS/tools/bin:$PATH
 source steps/2_cross_tmp_tools/16_binutils_pass2.sh
 source steps/2_cross_tmp_tools/17_gcc_pass2.sh
 
+#step 3. chroot
+source steps/3_chroot/enter_chroot.sh
+
+

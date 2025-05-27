@@ -44,6 +44,11 @@ rm -rf ./lib64
 ln -s ./usr/lib ./lib64
 popd
 
+# Copy chroot scripts inside $LFS/root/chroot_scripts
+mkdir -p $LFS/root/chroot_scripts
+cp -r /home/lfs/steps/3_chroot/* $LFS/root/chroot_scripts/
+chmod +x $LFS/root/chroot_scripts/*.sh
+
 # Entering chroot
 chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
@@ -52,5 +57,6 @@ chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     MAKEFLAGS="-j$JOBS"         \
     TESTSUITEFLAGS="-j$JOBS"    \
-    /bin/bash --login
+    /bin/bash --login -c "/root/chroot_scripts/main_chroot.sh; exec /bin/bash --login"
+
 
