@@ -5,6 +5,12 @@ set -x
 
 echo ">>> Inside chroot environment"
 
+# Init variables
+JOBS=$(nproc)
+PACKAGE_CACHE=/var/lib/lfs
+BUILD_DIR=/build
+mkdir -pv $BUILD_DIR
+
 # Create basic directory layout
 mkdir -pv /{boot,home,mnt,opt,srv}
 mkdir -pv /etc/{opt,sysconfig}
@@ -86,7 +92,6 @@ chmod -v 664  /var/log/lastlog
 chmod -v 600  /var/log/btmp
 
 echo ">>> Basic system chroot prepared"
-
 
 source /root/chroot_scripts/1_gettext.sh
 

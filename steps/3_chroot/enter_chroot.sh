@@ -5,6 +5,7 @@ set -x
 
 LFS=/mnt/new_root_dir
 JOBS=$(nproc)
+PACKAGE_CACHE=/var/lib/lfs
 
 # Clean previous result
 echo ">>> Unmounting previous LFS mounts if any..."
@@ -48,6 +49,10 @@ popd
 mkdir -p $LFS/root/chroot_scripts
 cp -r /home/lfs/steps/3_chroot/* $LFS/root/chroot_scripts/
 chmod +x $LFS/root/chroot_scripts/*.sh
+
+# Copy downloaded packages to lfs env
+mkdir -pv ${LFS}/var/lib/lfs
+cp -r ${PACKAGE_CACHE}/* ${LFS}/var/lib/lfs
 
 # Entering chroot
 chroot "$LFS" /usr/bin/env -i   \
