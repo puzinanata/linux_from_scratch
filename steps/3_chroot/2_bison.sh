@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PACKAGE_NAME='gettext-0.24.tar.xz'
-PACKAGE_MD5='87aea3013802a3c60fa3feb5c7164069'
-PACKAGE_DIR_NAME='gettext-0.24'
+PACKAGE_NAME='bison-3.8.2.tar.xz'
+PACKAGE_MD5='c28f119f405a2304ff0a7ccdcc629713'
+PACKAGE_DIR_NAME='bison-3.8.2'
 
 pushd "${PACKAGE_CACHE}"
 
@@ -28,11 +28,12 @@ fi
 #Go to unpacked dir with source
 pushd "${PACKAGE_DIR_NAME}"
 
-./configure --disable-shared
+./configure --prefix=/usr \
+            --docdir=/usr/share/doc/bison-3.8.2
 
 make -j$JOBS
 
-cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
+make install
 
 popd
 popd
