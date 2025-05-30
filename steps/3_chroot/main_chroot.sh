@@ -95,4 +95,5 @@ echo ">>> Basic system chroot prepared"
 
 source /root/chroot_scripts/1_gettext.sh
 source /root/chroot_scripts/2_bison.sh
+source /root/chroot_scripts/3_perl.sh
 
