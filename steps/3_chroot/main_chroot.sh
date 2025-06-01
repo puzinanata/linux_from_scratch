@@ -97,5 +97,6 @@ source /root/chroot_scripts/1_gettext.sh
 source /root/chroot_scripts/2_bison.sh
 source /root/chroot_scripts/3_perl.sh
 source /root/chroot_scripts/4_python.sh
-
+source /root/chroot_scripts/5_texinfo.sh
+source /root/chroot_scripts/6_util_linux.sh
 
