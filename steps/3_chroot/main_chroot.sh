@@ -100,4 +100,7 @@ source /root/chroot_scripts/4_python.sh
 source /root/chroot_scripts/5_texinfo.sh
 source /root/chroot_scripts/6_util_linux.sh
 source /root/chroot_scripts/7_clean.sh
+source /root/chroot_scripts/8_manpages.sh
+source /root/chroot_scripts/9_iana_etc.sh
+source /root/chroot_scripts/10_glibc.sh
 
