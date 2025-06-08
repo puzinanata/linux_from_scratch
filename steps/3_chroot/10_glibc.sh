@@ -31,6 +31,7 @@ pushd "${PACKAGE_DIR_NAME}"
 cp -v  "${PACKAGE_CACHE}"/glibc-2.41-fhs-1.patch "${BUILD_DIR}/"
 patch -Np1 -i ../glibc-2.41-fhs-1.patch
 
+rm -rf build
 mkdir -v build
 pushd build
 
