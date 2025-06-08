@@ -28,6 +28,7 @@ fi
 #Go to unpacked dir with source
 pushd "${PACKAGE_DIR_NAME}"
 
+cp -v  "${PACKAGE_CACHE}"/glibc-2.41-fhs-1.patch "${BUILD_DIR}/"
 patch -Np1 -i ../glibc-2.41-fhs-1.patch
 
 mkdir -v build
@@ -110,7 +111,29 @@ rpc: files
 # End /etc/nsswitch.conf
 EOF
 
-tar -xf ../../tzdata2025a.tar.gz
+# Installation tzdata
+PACKAGE_NAME='tzdata2025a.tar.gz'
+PACKAGE_MD5='404229390c06b7440f5e48d12c1a3251'
+PACKAGE_DIR_NAME='tzdata2025a'
+
+pushd "${PACKAGE_CACHE}"
+
+cp -v "${PACKAGE_NAME}" "${BUILD_DIR}/"
+
+popd
+
+pushd "${BUILD_DIR}"
+
+MD5_ACTUAL=$(md5sum "${PACKAGE_NAME}"| awk '{ print $1 }')
+
+if [[ "${MD5_ACTUAL}" == "${PACKAGE_MD5}" ]]; then
+    tar -xf "${PACKAGE_NAME}"
+    echo "unpacked successfully."
+    rm "${PACKAGE_NAME}"
+    echo "Archive removed."
+else
+    echo "MD5 mismatch!"
+fi
 
 ZONEINFO=/usr/share/zoneinfo
 mkdir -pv $ZONEINFO/{posix,right}
@@ -123,12 +146,12 @@ for tz in etcetera southamerica northamerica europe africa antarctica  \
 done
 
 cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
-zic -d $ZONEINFO -p America/New_York
+zic -d $ZONEINFO -p Europe/Lisbon
 unset ZONEINFO tz
 
 tzselect
 
-ln -sfv /usr/share/zoneinfo/<xxx> /etc/localtime
+ln -sfv /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
 
 cat > /etc/ld.so.conf << "EOF"
 # Begin /etc/ld.so.conf
@@ -145,6 +168,7 @@ EOF
 mkdir -pv /etc/ld.so.conf.d
 
 
+popd
 popd
 popd
 popd
