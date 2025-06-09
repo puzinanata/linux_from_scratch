@@ -128,7 +128,7 @@ pushd "${BUILD_DIR}"
 MD5_ACTUAL=$(md5sum "${PACKAGE_NAME}"| awk '{ print $1 }')
 
 if [[ "${MD5_ACTUAL}" == "${PACKAGE_MD5}" ]]; then
-    tar -xf "${PACKAGE_NAME}"
+    tar -xzf "${PACKAGE_NAME}"
     echo "unpacked successfully."
     rm "${PACKAGE_NAME}"
     echo "Archive removed."
@@ -176,3 +176,4 @@ popd
 popd
 
 rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}
+rm -rf ${BUILD_DIR}/glibc-2.41
