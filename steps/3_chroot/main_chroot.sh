@@ -104,3 +104,4 @@ source /root/chroot_scripts/8_manpages.sh
 source /root/chroot_scripts/9_iana_etc.sh
 source /root/chroot_scripts/10_glibc.sh
 source /root/chroot_scripts/11_zlib.sh
+source /root/chroot_scripts/12_bzip.sh
