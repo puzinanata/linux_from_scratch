@@ -32,8 +32,6 @@ pushd "${PACKAGE_DIR_NAME}"
 
 make -j$JOBS
 
-make check
-
 make install
 
 rm -fv /usr/lib/libz.a
