@@ -105,3 +105,15 @@ source /root/chroot_scripts/9_iana_etc.sh
 source /root/chroot_scripts/10_glibc.sh
 source /root/chroot_scripts/11_zlib.sh
 source /root/chroot_scripts/12_bzip.sh
+source /root/chroot_scripts/13_xz.sh
+source /root/chroot_scripts/14_lz4.sh
+source /root/chroot_scripts/15_zstd.sh
+source /root/chroot_scripts/16_file.sh
+source /root/chroot_scripts/17_readline.sh
+source /root/chroot_scripts/18_m4.sh
+source /root/chroot_scripts/19_bc.sh
+source /root/chroot_scripts/20_flex.sh
+source /root/chroot_scripts/21_tcl.sh
+
+
+
