@@ -114,6 +114,20 @@ source /root/chroot_scripts/18_m4.sh
 source /root/chroot_scripts/19_bc.sh
 source /root/chroot_scripts/20_flex.sh
 source /root/chroot_scripts/21_tcl.sh
+source /root/chroot_scripts/22_expect.sh
+source /root/chroot_scripts/23_dejagnu.sh
+source /root/chroot_scripts/24_pkgconf.sh
+source /root/chroot_scripts/25_binutils.sh
+source /root/chroot_scripts/26_gmp.sh
+source /root/chroot_scripts/27_mpfr.sh
+source /root/chroot_scripts/28_mpc.sh
+source /root/chroot_scripts/29_attr.sh
+source /root/chroot_scripts/30_acl.sh
+
+
+
+
+
 
 
 
