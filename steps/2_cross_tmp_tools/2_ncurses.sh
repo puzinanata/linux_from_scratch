@@ -65,7 +65,7 @@ make -j$JOBS
 #Install build artefacts from previous step
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
 
-ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
+ln -svf libncursesw.so $LFS/usr/lib/libncurses.so
 
 sed -e 's/^#if.*XOPEN.*$/#if 1/' -i $LFS/usr/include/curses.h
 

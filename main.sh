@@ -24,7 +24,7 @@ mkdir -v -p "${BUILD_DIR}"
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
-  ln -sv usr/$i $LFS/$i
+  ln -svf usr/$i $LFS/$i
 done
 
 case $(uname -m) in

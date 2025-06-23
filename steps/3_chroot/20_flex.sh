@@ -39,8 +39,8 @@ make -j$JOBS
 
 make install
 
-ln -sv flex   /usr/bin/lex
-ln -sv flex.1 /usr/share/man/man1/lex.1
+ln -svf flex   /usr/bin/lex
+ln -svf flex.1 /usr/share/man/man1/lex.1
 
 popd
 popd
