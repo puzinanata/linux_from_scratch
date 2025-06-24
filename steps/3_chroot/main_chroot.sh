@@ -123,6 +123,7 @@ source /root/chroot_scripts/27_mpfr.sh
 source /root/chroot_scripts/28_mpc.sh
 source /root/chroot_scripts/29_attr.sh
 source /root/chroot_scripts/30_acl.sh
+source /root/chroot_scripts/31_libcap.sh
 
 
 
