@@ -129,6 +129,12 @@ source /root/chroot_scripts/33_shadow.sh
 source /root/chroot_scripts/34_gcc.sh
 source /root/chroot_scripts/35_ncurses.sh
 source /root/chroot_scripts/36_sed.sh
+source /root/chroot_scripts/37_psmisc.sh
+source /root/chroot_scripts/38_gettext.sh
+source /root/chroot_scripts/39_bison.sh
+source /root/chroot_scripts/40_grep.sh
+
+
 
 
 
