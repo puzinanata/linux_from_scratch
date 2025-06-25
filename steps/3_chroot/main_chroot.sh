@@ -124,7 +124,11 @@ source /root/chroot_scripts/28_mpc.sh
 source /root/chroot_scripts/29_attr.sh
 source /root/chroot_scripts/30_acl.sh
 source /root/chroot_scripts/31_libcap.sh
-
+source /root/chroot_scripts/32_libxcrypt.sh
+source /root/chroot_scripts/33_shadow.sh
+source /root/chroot_scripts/34_gcc.sh
+source /root/chroot_scripts/35_ncurses.sh
+source /root/chroot_scripts/36_sed.sh
 
 
 
