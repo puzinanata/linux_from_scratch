@@ -64,8 +64,8 @@ make -j$JOBS
 
 make install
 
-ln -svr /usr/bin/cpp /usr/lib
-ln -sv gcc.1 /usr/share/man/man1/cc.1
+ln -svrf /usr/bin/cpp /usr/lib
+ln -svf gcc.1 /usr/share/man/man1/cc.1
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/14.2.0/liblto_plugin.so \
         /usr/lib/bfd-plugins/
 
