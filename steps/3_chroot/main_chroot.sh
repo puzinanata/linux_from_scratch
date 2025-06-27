@@ -134,6 +134,8 @@ source /root/chroot_scripts/38_gettext.sh
 source /root/chroot_scripts/39_bison.sh
 source /root/chroot_scripts/40_grep.sh
 source /root/chroot_scripts/41_bash.sh
+source /root/chroot_scripts/42_libtool.sh
+source /root/chroot_scripts/43_gdbm.sh
 
 
 
