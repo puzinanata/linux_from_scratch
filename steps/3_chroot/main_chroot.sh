@@ -136,6 +136,7 @@ source /root/chroot_scripts/40_grep.sh
 source /root/chroot_scripts/41_bash.sh
 source /root/chroot_scripts/42_libtool.sh
 source /root/chroot_scripts/43_gdbm.sh
+source /root/chroot_scripts/44_gperf.sh
 
 
 
