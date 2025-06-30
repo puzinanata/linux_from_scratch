@@ -78,7 +78,7 @@ download_package "https://ftp.gnu.org/gnu/bash/bash-5.2.37.tar.gz" "bash-5.2.37.
 download_package "https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz" "libtool-2.5.4.tar.xz"
 download_package "https://ftp.gnu.org/gnu/gdbm/gdbm-1.24.tar.gz" "gdbm-1.24.tar.gz"
 download_package "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz" "gperf-3.1.tar.gz"
-download_package "https://prdownloads.sourceforge.net/expat/expat-2.6.4.tar.xz" "expat-2.6.4.tar.xz"
+download_package "https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.xz" "expat-2.6.4.tar.xz"
 download_package "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz" "inetutils-2.6.tar.xz"
 download_package "https://www.greenwoodsoftware.com/less/less-668.tar.gz" "less-668.tar.gz"
 download_package "https://www.cpan.org/src/5.0/perl-5.40.1.tar.xz" "perl-5.40.1.tar.xz"
