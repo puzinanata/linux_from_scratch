@@ -140,7 +140,9 @@ source /root/chroot_scripts/44_gperf.sh
 source /root/chroot_scripts/45_expat.sh
 source /root/chroot_scripts/46_inetutils.sh
 source /root/chroot_scripts/47_less.sh
-
+source /root/chroot_scripts/48_perl.sh
+source /root/chroot_scripts/49_parser.sh
+source /root/chroot_scripts/50_intltool.sh
 
 
 
