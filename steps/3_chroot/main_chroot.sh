@@ -143,6 +143,16 @@ source /root/chroot_scripts/47_less.sh
 source /root/chroot_scripts/48_perl.sh
 source /root/chroot_scripts/49_parser.sh
 source /root/chroot_scripts/50_intltool.sh
+source /root/chroot_scripts/51_autoconf.sh
+source /root/chroot_scripts/52_automake.sh
+source /root/chroot_scripts/53_openssl.sh
+source /root/chroot_scripts/54_libelf.sh
+source /root/chroot_scripts/55_libffi.sh
+source /root/chroot_scripts/56_python.sh
+source /root/chroot_scripts/57_flitcore.sh
+source /root/chroot_scripts/58_wheel.sh
+source /root/chroot_scripts/59_setuptools.sh
+
 
 
 
