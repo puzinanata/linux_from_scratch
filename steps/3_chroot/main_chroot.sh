@@ -152,6 +152,18 @@ source /root/chroot_scripts/56_python.sh
 source /root/chroot_scripts/57_flitcore.sh
 source /root/chroot_scripts/58_wheel.sh
 source /root/chroot_scripts/59_setuptools.sh
+source /root/chroot_scripts/60_ninja.sh
+source /root/chroot_scripts/61_meson.sh
+source /root/chroot_scripts/62_kmod.sh
+source /root/chroot_scripts/63_coreutils.sh
+source /root/chroot_scripts/64_check.sh
+source /root/chroot_scripts/65_diffutils.sh
+source /root/chroot_scripts/66_gawk.sh
+source /root/chroot_scripts/67_findutils.sh
+source /root/chroot_scripts/68_groff.sh
+source /root/chroot_scripts/69_grub.sh
+source /root/chroot_scripts/70_gzip.sh
+
 
 
 
