@@ -163,6 +163,16 @@ source /root/chroot_scripts/67_findutils.sh
 source /root/chroot_scripts/68_groff.sh
 source /root/chroot_scripts/69_grub.sh
 source /root/chroot_scripts/70_gzip.sh
+source /root/chroot_scripts/71_iproot.sh
+source /root/chroot_scripts/72_kbd.sh
+source /root/chroot_scripts/73_libpipeline.sh
+source /root/chroot_scripts/74_make.sh
+source /root/chroot_scripts/75_patch.sh
+source /root/chroot_scripts/76_tar.sh
+source /root/chroot_scripts/77_texinfo.sh
+source /root/chroot_scripts/78_vim.sh
+source /root/chroot_scripts/79_markupsafe.sh
+source /root/chroot_scripts/80_jinja.sh
 
 
 
