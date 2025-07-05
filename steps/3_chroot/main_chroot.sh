@@ -173,6 +173,13 @@ source /root/chroot_scripts/77_texinfo.sh
 source /root/chroot_scripts/78_vim.sh
 source /root/chroot_scripts/79_markupsafe.sh
 source /root/chroot_scripts/80_jinja.sh
+source /root/chroot_scripts/81_udev.sh
+source /root/chroot_scripts/82_mandb.sh
+source /root/chroot_scripts/83_procpsng.sh
+source /root/chroot_scripts/84_utillinux.sh
+source /root/chroot_scripts/85_e2fsprogs.sh
+source /root/chroot_scripts/86_sysklogd.sh
+source /root/chroot_scripts/87_sysvinit.sh
 
 
 
