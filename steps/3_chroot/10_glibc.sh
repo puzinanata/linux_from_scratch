@@ -115,7 +115,12 @@ cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p Europe/Lisbon
 unset ZONEINFO tz
 
-tzselect
+tzselect << EOF
+8
+38
+1
+1
+EOF
 
 ln -sfv /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
 
