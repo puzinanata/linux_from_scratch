@@ -38,6 +38,8 @@ echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 
 make -j$JOBS
 
+pushd src
+
 make install
 
 ln -sfv vim /usr/bin/vi
@@ -65,6 +67,7 @@ endif
 " End /etc/vimrc
 EOF
 
+popd
 popd
 popd
 popd
