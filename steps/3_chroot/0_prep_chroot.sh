@@ -128,5 +128,6 @@ download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/glibc-2.41-f
 download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/kbd-2.7.1-backspace-1.patch" "kbd-2.7.1-backspace-1.patch"
 download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/sysvinit-3.14-consolidated-1.patch" "sysvinit-3.14-consolidated-1.patch"
 download_package "https://www.iana.org/time-zones/repository/releases/tzdata2025a.tar.gz" "tzdata2025a.tar.gz"
-
+download_package "https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz" "udev-lfs-20230818.tar.xz"
+download_package "https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.3.tar.xz" "systemd-man-pages-257.3.tar.xz"
 

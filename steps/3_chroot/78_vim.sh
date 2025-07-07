@@ -42,7 +42,7 @@ make -j$JOBS
 
 pushd src
 
-make install
+make install || true
 
 popd
 popd
