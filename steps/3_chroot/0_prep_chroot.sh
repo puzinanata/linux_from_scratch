@@ -130,4 +130,5 @@ download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/sysvinit-3.1
 download_package "https://www.iana.org/time-zones/repository/releases/tzdata2025a.tar.gz" "tzdata2025a.tar.gz"
 download_package "https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz" "udev-lfs-20230818.tar.xz"
 download_package "https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.3.tar.xz" "systemd-man-pages-257.3.tar.xz"
+download_package "https://www.linuxfromscratch.org/lfs/downloads/12.3/lfs-bootscripts-20240825.tar.xz" "lfs-bootscripts-20240825.tar.xz"
 
