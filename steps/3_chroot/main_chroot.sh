@@ -184,6 +184,7 @@ source /root/chroot_scripts/88_cleaning.sh
 source /root/chroot_scripts/89_bootscript.sh
 source /root/chroot_scripts/90_manage_devices.sh
 source /root/chroot_scripts/91_network_config.sh
+source /root/chroot_scripts/92_config.sh
 
 
 
