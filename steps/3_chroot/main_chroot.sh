@@ -186,6 +186,7 @@ source /root/chroot_scripts/90_manage_devices.sh
 source /root/chroot_scripts/91_network_config.sh
 source /root/chroot_scripts/92_config.sh
 source /root/chroot_scripts/93_linux.sh
+#source /root/chroot_scripts/94_grub.sh
 
 
 
