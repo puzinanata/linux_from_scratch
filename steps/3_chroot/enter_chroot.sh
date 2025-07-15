@@ -62,6 +62,6 @@ chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     MAKEFLAGS="-j$JOBS"         \
     TESTSUITEFLAGS="-j$JOBS"    \
-    /bin/bash --login -c "/root/chroot_scripts/main_chroot.sh; exec /bin/bash --login"
+    /bin/bash --login -c "/root/chroot_scripts/main_chroot.sh"
 
 

@@ -78,3 +78,5 @@ source steps/3_chroot/0_prep_chroot.sh
 source steps/3_chroot/enter_chroot.sh
 
 
+echo "!!!Finished!!!"
+
