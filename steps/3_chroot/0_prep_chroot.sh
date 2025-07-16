@@ -119,7 +119,7 @@ download_package "https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-l
 download_package "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.2/e2fsprogs-1.47.2.tar.gz" "e2fsprogs-1.47.2.tar.gz"
 download_package "https://github.com/troglobit/sysklogd/releases/download/v2.7.0/sysklogd-2.7.0.tar.gz" "sysklogd-2.7.0.tar.gz"
 download_package "https://github.com/slicer69/sysvinit/releases/download/3.14/sysvinit-3.14.tar.xz" "sysvinit-3.14.tar.xz"
-download_package "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz" "Parser-2.47.tar.gz"
+download_package "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz" "XML-Parser-2.47.tar.gz"
 download_package "https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz" "procps-ng-4.0.5.tar.xz"
 download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/bzip2-1.0.8-install_docs-1.patch" "bzip2-1.0.8-install_docs-1.patch"
 download_package "https://www.linuxfromscratch.org/patches/lfs/12.3/coreutils-9.6-i18n-1.patch" "coreutils-9.6-i18n-1.patch"

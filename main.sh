@@ -77,6 +77,59 @@ source steps/2_cross_tmp_tools/17_gcc_pass2.sh
 source steps/3_chroot/0_prep_chroot.sh
 source steps/3_chroot/enter_chroot.sh
 
+echo "Installation LFS Finished"
 
-echo "!!!Finished!!!"
+set -e
+set -x
+#Creation disk to save LFS image
+apt update
+apt install -y qemu-utils
+qemu-img create /var/lib/lfs.img 9G
+
+#Create one partiotion '/'
+fdisk /var/lib/lfs.img << EOF
+n
+p
+1
+
+
+a
+w
+EOF
+
+DISK=$(flock --exclusive /tmp/losetup_get_new_dev.lock losetup -f --show "/var/lib/lfs.img")
+
+#partitition
+partprobe "$DISK"
+
+#Formating
+mkfs.ext4 -F "$DISK"p1
+
+rm -rf /mnt/finish_root_dir
+mkdir -p  /mnt/finish_root_dir
+
+mount "$DISK"p1 /mnt/finish_root_dir
+
+time mv /mnt/new_root_dir/* /mnt/finish_root_dir
+
+#Chroot prerequisites
+mount -v --bind /dev /mnt/finish_root_dir/dev
+mount -vt proc proc /mnt/finish_root_dir/proc
+mount -vt sysfs sysfs /mnt/finish_root_dir/sys
+mount -vt tmpfs tmpfs /mnt/finish_root_dir/run
+
+#GRUB installation
+chroot /mnt/finish_root_dir /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
+chroot /mnt/finish_root_dir/ /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'
+
+umount -v /mnt/finish_root_dir/run
+umount -v /mnt/finish_root_dir/sys
+umount -v /mnt/finish_root_dir/proc
+umount -v /mnt/finish_root_dir/dev
+umount -v /mnt/finish_root_dir/
+
+
+losetup -f --show "/var/lib/lfs.img"
+echo "lfs image disk is ready"
+
 
