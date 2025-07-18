@@ -116,8 +116,7 @@ cat > /etc/fstab << "EOF"
 # file system  mount-point    type     options             dump  fsck
 #                                                                order
 
-/dev/<xxx>     /              <fff>    defaults            1     1
-/dev/<yyy>     swap           swap     pri=1               0     0
+/dev/sda1      /              ext4     defaults            1     1
 proc           /proc          proc     nosuid,noexec,nodev 0     0
 sysfs          /sys           sysfs    nosuid,noexec,nodev 0     0
 devpts         /dev/pts       devpts   gid=5,mode=620      0     0
