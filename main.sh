@@ -118,6 +118,9 @@ mount -vt proc proc /mnt/finish_root_dir/proc
 mount -vt sysfs sysfs /mnt/finish_root_dir/sys
 mount -vt tmpfs tmpfs /mnt/finish_root_dir/run
 
+#set up password in system
+chroot /mnt/finish_root_dir/ /bin/bash -c 'echo password | passwd -s'
+
 #GRUB installation
 chroot /mnt/finish_root_dir /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
 chroot /mnt/finish_root_dir/ /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'
@@ -129,7 +132,7 @@ umount -v /mnt/finish_root_dir/dev
 umount -v /mnt/finish_root_dir/
 
 
-losetup -f --show "/var/lib/lfs.img"
+losetup -d ${DISK}
 echo "lfs image disk is ready"
 
 

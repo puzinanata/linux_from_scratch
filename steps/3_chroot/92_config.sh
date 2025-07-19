@@ -13,6 +13,7 @@ l3:3:wait:/etc/rc.d/init.d/rc 3
 l4:4:wait:/etc/rc.d/init.d/rc 4
 l5:5:wait:/etc/rc.d/init.d/rc 5
 l6:6:wait:/etc/rc.d/init.d/rc 6
+l7:7:wait:/etc/rc.d/init.d/rc 7
 
 ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
 
@@ -25,6 +26,7 @@ s1:1:respawn:/sbin/sulogin
 4:2345:respawn:/sbin/agetty tty4 9600
 5:2345:respawn:/sbin/agetty tty5 9600
 6:2345:respawn:/sbin/agetty tty6 9600
+7:2345:respawn:/sbin/agetty --noclear ttyS0 9600
 
 EOF
 
