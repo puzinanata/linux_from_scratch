@@ -86,8 +86,10 @@ apt update
 apt install -y qemu-utils
 qemu-img create /var/lib/lfs.img 9G
 
+#For debug
+echo $PATH
 #Create one partiotion '/'
-fdisk /var/lib/lfs.img << EOF
+/usr/sbin/fdisk /var/lib/lfs.img << EOF
 n
 p
 1
