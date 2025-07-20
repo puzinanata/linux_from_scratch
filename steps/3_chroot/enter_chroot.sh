@@ -52,7 +52,11 @@ chmod +x $LFS/root/chroot_scripts/*.sh
 
 # Copy downloaded packages to lfs env
 mkdir -pv ${LFS}/var/lib/lfs
-cp -r ${PACKAGE_CACHE}/* ${LFS}/var/lib/lfs
+
+#Exclude lfs.img
+ls -1 ${PACKAGE_CACHE}/ | grep -v 'lfs.img' | while read FILE; do
+  cp -v ${PACKAGE_CACHE}/$FILE ${LFS}/var/lib/lfs/
+done
 
 # Entering chroot
 chroot "$LFS" /usr/bin/env -i   \

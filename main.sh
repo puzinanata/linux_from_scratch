@@ -15,22 +15,6 @@ LFS_TGT=$(uname -m)-lfs-linux-gnu
 JOBS=$(nproc)
 
 
-# Create directories
-# Creating a Limited Directory Layout in the LFS Filesystem
-mkdir -v -p "${PACKAGE_CACHE}"
-mkdir -v -p "${LFS}"
-mkdir -v -p "${BUILD_DIR}"
-
-mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
-
-for i in bin lib sbin; do
-  ln -svf usr/$i $LFS/$i
-done
-
-case $(uname -m) in
-  x86_64) mkdir -pv $LFS/lib64 ;;
-esac
-
 # Install basic requirements
 apt update
 apt install -y \
@@ -46,8 +30,44 @@ apt install -y \
    curl \
    python3 \
    qemu-utils \
-   fdisk \
-   parted
+   fdisk
+
+#Creation disk to save LFS image
+rm -fv /var/lib/lfs/lfs.img
+qemu-img create /var/lib/lfs/lfs.img 15G
+
+fdisk /var/lib/lfs/lfs.img << EOF
+n
+p
+1
+
+
+a
+w
+EOF
+
+DISK=$(losetup --find --partscan --show /var/lib/lfs/lfs.img)
+
+#Formating
+mkfs.ext4 -F "$DISK"p1
+
+mount "$DISK"p1 $LFS
+
+mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+
+for i in bin lib sbin; do
+  ln -svf usr/$i $LFS/$i
+done
+
+case $(uname -m) in
+  x86_64) mkdir -pv $LFS/lib64 ;;
+esac
+
+# Create directories
+# Creating a Limited Directory Layout in the LFS Filesystem
+mkdir -v -p "${PACKAGE_CACHE}"
+mkdir -v -p "${LFS}"
+mkdir -v -p "${BUILD_DIR}"
 
 # step 1
 source steps/1_cross_toolchain/1_binutils.sh
@@ -82,55 +102,24 @@ source steps/3_chroot/enter_chroot.sh
 
 echo "Installation LFS Finished"
 
-set -e
-set -x
-#Creation disk to save LFS image
-qemu-img create /var/lib/lfs/lfs.img 9G
-
-fdisk /var/lib/lfs/lfs.img << EOF
-n
-p
-1
-
-
-a
-w
-EOF
-
-DISK=$(flock --exclusive /tmp/losetup_get_new_dev.lock losetup -f --show "/var/lib/lfs/lfs.img")
-
-#partitition
-partprobe "$DISK"
-
-#Formating
-mkfs.ext4 -F "$DISK"p1
-
-rm -rf /mnt/finish_root_dir
-mkdir -p  /mnt/finish_root_dir
-
-mount "$DISK"p1 /mnt/finish_root_dir
-
-time mv /mnt/new_root_dir/* /mnt/finish_root_dir
-
 #Chroot prerequisites
-mount -v --bind /dev /mnt/finish_root_dir/dev
-mount -vt proc proc /mnt/finish_root_dir/proc
-mount -vt sysfs sysfs /mnt/finish_root_dir/sys
-mount -vt tmpfs tmpfs /mnt/finish_root_dir/run
+mount -v --bind /dev $LFS
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
 
 #set up password in system
-chroot /mnt/finish_root_dir/ /bin/bash -c 'echo password | passwd -s'
+chroot $LFS /bin/bash -c 'echo password | passwd -s'
 
 #GRUB installation
-chroot /mnt/finish_root_dir /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
-chroot /mnt/finish_root_dir/ /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'
+chroot $LFS /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
+chroot $LFS /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'
 
-umount -v /mnt/finish_root_dir/run
-umount -v /mnt/finish_root_dir/sys
-umount -v /mnt/finish_root_dir/proc
-umount -v /mnt/finish_root_dir/dev
-umount -v /mnt/finish_root_dir/
-
+umount -v $LFS/run
+umount -v $LFS/sys
+umount -v $LFS/proc
+umount -v $LFS/dev
+umount -v $LFS
 
 losetup -d ${DISK}
 echo "lfs image disk is ready"
