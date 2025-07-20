@@ -84,9 +84,9 @@ echo "Installation LFS Finished"
 set -e
 set -x
 #Creation disk to save LFS image
-qemu-img create /var/lib/lfs.img 9G
+qemu-img create /var/lib/lfs/lfs.img 9G
 
-fdisk /var/lib/lfs.img << EOF
+fdisk /var/lib/lfs/lfs.img << EOF
 n
 p
 1
@@ -96,7 +96,7 @@ a
 w
 EOF
 
-DISK=$(flock --exclusive /tmp/losetup_get_new_dev.lock losetup -f --show "/var/lib/lfs.img")
+DISK=$(flock --exclusive /tmp/losetup_get_new_dev.lock losetup -f --show "/var/lib/lfs/lfs.img")
 
 #partitition
 partprobe "$DISK"
