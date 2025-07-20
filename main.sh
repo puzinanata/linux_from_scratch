@@ -46,7 +46,8 @@ apt install -y \
    curl \
    python3 \
    qemu-utils \
-   fdisk
+   fdisk \
+   parted
 
 # step 1
 source steps/1_cross_toolchain/1_binutils.sh
@@ -133,5 +134,3 @@ umount -v /mnt/finish_root_dir/
 
 losetup -d ${DISK}
 echo "lfs image disk is ready"
-
-
