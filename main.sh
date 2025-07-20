@@ -44,7 +44,9 @@ apt install -y \
    patch \
    xz-utils \
    curl \
-   python3
+   python3 \
+   qemu-utils \
+   fdisk
 
 # step 1
 source steps/1_cross_toolchain/1_binutils.sh
@@ -82,14 +84,9 @@ echo "Installation LFS Finished"
 set -e
 set -x
 #Creation disk to save LFS image
-apt update
-apt install -y qemu-utils
 qemu-img create /var/lib/lfs.img 9G
 
-#For debug
-echo $PATH
-#Create one partiotion '/'
-/usr/sbin/fdisk /var/lib/lfs.img << EOF
+fdisk /var/lib/lfs.img << EOF
 n
 p
 1
