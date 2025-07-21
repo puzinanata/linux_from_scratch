@@ -102,24 +102,5 @@ source steps/3_chroot/enter_chroot.sh
 
 echo "Installation LFS Finished"
 
-#Chroot prerequisites
-mount -v --bind /dev $LFS
-mount -vt proc proc $LFS/proc
-mount -vt sysfs sysfs $LFS/sys
-mount -vt tmpfs tmpfs $LFS/run
-
-#set up password in system
-chroot $LFS /bin/bash -c 'echo password | passwd -s'
-
-#GRUB installation
-chroot $LFS /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
-chroot $LFS /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'
-
-umount -v $LFS/run
-umount -v $LFS/sys
-umount -v $LFS/proc
-umount -v $LFS/dev
-umount -v $LFS
-
 losetup -d ${DISK}
 echo "lfs image disk is ready"

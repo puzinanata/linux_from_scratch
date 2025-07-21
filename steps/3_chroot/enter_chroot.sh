@@ -68,4 +68,9 @@ chroot "$LFS" /usr/bin/env -i   \
     TESTSUITEFLAGS="-j$JOBS"    \
     /bin/bash --login -c "/root/chroot_scripts/main_chroot.sh"
 
+#set up password in system
+chroot $LFS /bin/bash -c 'echo password | passwd -s'
 
+#GRUB installation
+chroot $LFS /bin/bash -c "/sbin/grub-install -v ${DISK} --modules='biosdisk part_msdos normal' --target=i386-pc"
+chroot $LFS /bin/bash -c 'grub-mkconfig > /boot/grub/grub.cfg'

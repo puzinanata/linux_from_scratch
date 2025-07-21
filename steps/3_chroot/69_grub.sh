@@ -52,7 +52,7 @@ cat > /etc/default/grub << "EOF"
 GRUB_TIMEOUT=-1
 GRUB_TERMINAL="serial console"
 GRUB_SERIAL_COMMAND="serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1"
-GRUB_CMDLINE_LINUX="console=tty0 console=ttyS0,115200n8 root=/dev/sda1"
+GRUB_CMDLINE_LINUX="console=tty0 console=ttyS0,115200n8 root=/dev/sda1 net.ifnames=0"
 EOF
 
 popd
