@@ -140,4 +140,4 @@ download_package "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-
 download_package "https://nginx.org/download/nginx-1.28.0.tar.gz" "nginx-1.28.0.tar.gz"
 download_package "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz" "libtasn1-4.20.0.tar.gz"
 download_package "https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz" "p11-kit-0.25.5.tar.xz"
-
+download_package "https://sqlite.org/2025/sqlite-autoconf-3490100.tar.gz" "sqlite-autoconf-3490100.tar.gz"
