@@ -187,6 +187,14 @@ source /root/chroot_scripts/91_network_config.sh
 source /root/chroot_scripts/92_config.sh
 source /root/chroot_scripts/93_linux.sh
 
+#installation BLFS packages to run my project git_log_viz
+source /root/chroot_scripts/94_libpsl.sh
+source /root/chroot_scripts/95_curl.sh
+source /root/chroot_scripts/96_git.sh
+source /root/chroot_scripts/97_libtasn.sh
+source /root/chroot_scripts/98_p11kit.sh
+source /root/chroot_scripts/99_make_ca.sh
+
 
 
 

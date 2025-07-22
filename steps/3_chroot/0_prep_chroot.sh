@@ -132,3 +132,12 @@ download_package "https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.
 download_package "https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.3.tar.xz" "systemd-man-pages-257.3.tar.xz"
 download_package "https://www.linuxfromscratch.org/lfs/downloads/12.3/lfs-bootscripts-20240825.tar.xz" "lfs-bootscripts-20240825.tar.xz"
 download_package "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.13.4.tar.xz" "linux-6.13.4.tar.xz"
+download_package "https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz" "libpsl-0.21.5.tar.gz"
+download_package "https://curl.se/download/curl-8.12.1.tar.xz" "curl-8.12.1.tar.xz"
+download_package "https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz" "git-2.48.1.tar.xz"
+download_package "https://github.com/lfs-book/make-ca/archive/v1.15/make-ca-1.15.tar.gz" "make-ca-1.15.tar.gz"
+download_package "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2" "pcre2-10.45.tar.bz2"
+download_package "https://nginx.org/download/nginx-1.28.0.tar.gz" "nginx-1.28.0.tar.gz"
+download_package "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz" "libtasn1-4.20.0.tar.gz"
+download_package "https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz" "p11-kit-0.25.5.tar.xz"
+
