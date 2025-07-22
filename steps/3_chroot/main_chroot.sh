@@ -195,6 +195,7 @@ source /root/chroot_scripts/97_libtasn.sh
 source /root/chroot_scripts/98_p11kit.sh
 source /root/chroot_scripts/99_make_ca.sh
 source /root/chroot_scripts/100_sqlite.sh
+source /root/chroot_scripts/101_python.sh
 
 
 
