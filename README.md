@@ -5,11 +5,10 @@
 - `steps/` for installation scripts step by step
 
 #### to run project : 
-docker run -it --privileged                             \
+docker run -d --privileged                              \
      -v /home/puzinanata/linux_from_scratch:/home/lfs   \
      -v /var/lib/lfs:/var/lib/lfs                       \
      -v /mnt/new_root_dir/:/mnt/new_root_dir/           \
-      debian bash
-- cd /home/lfs
-- time bash main.sh
+     -v /dev:/dev                                       \
+      debian bash -c 'cd /home/lfs/; time bash main.sh'
 
