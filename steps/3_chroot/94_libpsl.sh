@@ -47,6 +47,5 @@ ninja install
 popd
 popd
 popd
-popd
 
 rm -rf ${BUILD_DIR}/${PACKAGE_DIR_NAME}
