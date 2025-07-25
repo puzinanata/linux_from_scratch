@@ -38,7 +38,7 @@ pushd "${PACKAGE_DIR_NAME}"
 make install &&
 install -vdm755 /etc/ssl/local
 
-/usr/sbin/make-ca -g
+#/usr/sbin/make-ca -g
 
 popd
 popd

@@ -12,3 +12,14 @@ docker run -d --privileged                              \
      -v /dev:/dev                                       \
       debian bash -c 'cd /home/lfs/; time bash main.sh'
 
+
+#### To clean system and disk after unfinished/ unsuccessful installation
+losetup -f --show "/var/lib/lfs/lfs.img" # to check name of disk for lfs
+
+umount -Rfv /mnt/new_root_dir || true
+
+losetup -D /dev/loopXX       # Detach disk from output this command losetup -f --show "/var/lib/lfs/lfs.img"
+
+rm -fv /var/lib/lfs/lfs.img    # Delete the image
+
+

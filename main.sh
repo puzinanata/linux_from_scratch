@@ -4,6 +4,7 @@ set -e
 set -x
 
 # Clean previous result
+umount -Rfv /mnt/new_root_dir || true
 rm -rfv /tools
 rm -rfv /mnt/new_root_dir/*
 

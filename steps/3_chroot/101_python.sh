@@ -28,8 +28,6 @@ fi
 #Go to unpacked dir with source
 pushd "${PACKAGE_DIR_NAME}"
 
-make clean
-
 CXX="/usr/bin/g++"               \
 ./configure --prefix=/usr        \
             --enable-shared      \
