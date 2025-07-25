@@ -38,7 +38,8 @@ pushd "${PACKAGE_DIR_NAME}"
 make install &&
 install -vdm755 /etc/ssl/local
 
-#/usr/sbin/make-ca -g
+curl -k https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt -v -L > certdata.txt
+/usr/sbin/make-ca -C certdata.txt
 
 popd
 popd
